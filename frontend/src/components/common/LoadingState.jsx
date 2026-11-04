@@ -8,3 +8,4 @@ export const LoadingState = ({ message = 'Loading...' }) => {
     </div>
   );
 };
+

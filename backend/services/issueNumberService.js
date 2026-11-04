@@ -26,3 +26,4 @@ const getNextIssueNumber = async () => {
 };
 
 module.exports = { getNextIssueNumber };
+

@@ -24,3 +24,4 @@ export const ProtectedRoute = ({ children, adminOnly = false }) => {
 
   return children;
 };
+

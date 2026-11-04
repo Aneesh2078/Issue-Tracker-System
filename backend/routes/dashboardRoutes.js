@@ -10,3 +10,4 @@ router.get('/stats', protect, getDashboardStats);
 router.get('/recent-issues', protect, getRecentIssues);
 
 module.exports = router;
+

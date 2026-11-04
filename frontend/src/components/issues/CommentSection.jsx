@@ -169,3 +169,4 @@ export const CommentSection = ({ issueId }) => {
     </div>
   );
 };
+

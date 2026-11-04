@@ -343,3 +343,4 @@ erDiagram
 | :--- | :--- | :--- |
 | Candidate / Lead Full-Stack Architect | Aneesh2078 | Complete & Verified |
 | Technical Assessment Panel | Exelon Circuits Engineering Team | Pending Review |
+

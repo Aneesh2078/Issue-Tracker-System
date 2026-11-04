@@ -29,3 +29,4 @@ commentSchema.index({ user: 1 });
 
 const Comment = mongoose.model('Comment', commentSchema);
 module.exports = Comment;
+

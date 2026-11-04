@@ -6,3 +6,4 @@ const { protect } = require('../middleware/authMiddleware');
 router.delete('/:id', protect, deleteComment);
 
 module.exports = router;
+

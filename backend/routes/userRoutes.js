@@ -12,3 +12,4 @@ router.get('/:id', protect, getUserById);
 router.patch('/:id/status', protect, adminOnly, updateUserStatus);
 
 module.exports = router;
+

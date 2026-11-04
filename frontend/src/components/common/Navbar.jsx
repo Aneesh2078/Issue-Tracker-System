@@ -130,3 +130,4 @@ export const Navbar = ({ onMenuClick, onSearchChange, searchValue = '' }) => {
     </header>
   );
 };
+

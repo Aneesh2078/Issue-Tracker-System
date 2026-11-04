@@ -12,3 +12,4 @@ router.post('/login', loginValidation, login);
 router.get('/me', protect, getMe);
 
 module.exports = router;
+

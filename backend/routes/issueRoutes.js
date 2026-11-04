@@ -33,3 +33,4 @@ router.put('/:id/assign', protect, adminOnly, assignIssue);
 router.patch('/:id/status', protect, updateIssueStatus);
 
 module.exports = router;
+

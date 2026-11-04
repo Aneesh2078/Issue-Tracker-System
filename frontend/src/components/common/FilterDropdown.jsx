@@ -23,3 +23,4 @@ export const FilterDropdown = ({ label, value, onChange, options, allLabel = 'Al
     </div>
   );
 };
+

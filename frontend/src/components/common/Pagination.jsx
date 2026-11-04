@@ -36,3 +36,4 @@ export const Pagination = ({ currentPage, totalPages, totalItems, onPageChange }
     </div>
   );
 };
+

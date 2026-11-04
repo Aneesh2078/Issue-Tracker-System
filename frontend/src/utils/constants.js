@@ -44,3 +44,4 @@ export const PRIORITY_CONFIG = {
     color: '#DC2626'
   }
 };
+

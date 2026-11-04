@@ -114,3 +114,4 @@ export const IssueTable = ({
     </div>
   );
 };
+

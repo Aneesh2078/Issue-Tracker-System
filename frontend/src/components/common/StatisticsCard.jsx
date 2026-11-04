@@ -30,3 +30,4 @@ export const StatisticsCard = ({ title, count, icon: Icon, color = 'blue' }) => 
     </div>
   );
 };
+

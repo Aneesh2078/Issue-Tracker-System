@@ -61,3 +61,4 @@ issueSchema.index({ title: 'text', description: 'text' });
 
 const Issue = mongoose.model('Issue', issueSchema);
 module.exports = Issue;
+
