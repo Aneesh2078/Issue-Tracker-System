@@ -17,20 +17,24 @@ const seedAll = async () => {
     // ─────────────────────────────────────────────────
     console.log('\n[1/4] Seeding Users...');
 
-    // Admin
-    let admin = await User.findOneAndUpdate(
-      { email: 'admin@exelon.com' },
-      {
+    // Admin — use findOne + save() so the bcrypt pre-save hook fires
+    let admin = await User.findOne({ email: 'admin@exelon.com' });
+    if (!admin) {
+      admin = await User.create({
         name: 'System Administrator',
         email: 'admin@exelon.com',
         password: 'AdminPass@123',
         role: 'admin',
         isActive: true
-      },
-      { upsert: true, new: true }
-    );
-    // Re-fetch clean so pre-save hash fires properly on new doc
-    admin = await User.findOne({ email: 'admin@exelon.com' });
+      });
+    } else {
+      admin.name = 'System Administrator';
+      admin.role = 'admin';
+      admin.isActive = true;
+      admin.password = 'AdminPass@123';
+      admin.markModified('password');
+      await admin.save();
+    }
     console.log('  ✓ Admin              : admin@exelon.com / AdminPass@123');
 
     // Vishwambhara (the primary normal user the demo uses)

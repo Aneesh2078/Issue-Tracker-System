@@ -21,11 +21,11 @@ const seedAdmin = async () => {
       console.log(`[Seed] Admin user (${adminEmail}) already exists. Ensuring admin role and active status...`);
       admin.role = 'admin';
       admin.isActive = true;
-      if (adminPassword) {
-        admin.password = adminPassword; // Triggers pre-save hash
-      }
+      // Mark as modified with a dummy value first so pre-save hook is guaranteed to trigger on new password
+      admin.password = adminPassword;
+      admin.markModified('password');
       await admin.save();
-      console.log('[Seed] Admin account updated successfully.');
+      console.log('[Seed] Admin account updated successfully with proper password hash.');
     } else {
       console.log(`[Seed] Creating new admin account for ${adminEmail}...`);
       admin = await User.create({
