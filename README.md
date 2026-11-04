@@ -213,6 +213,7 @@ This creates all users, 10 realistic issues, 11 comments, and sets the counter.
 | **User** | `jane.doe@exelon.com` | Assigned EMC shielding issue |
 | **User** | `john.smith@exelon.com` | Assigned firmware watchdog issue |
 | **User** | `priya.kumar@exelon.com` | **Deactivated** — demonstrates admin toggle |
+| **User** | `demo.user@exelon.com` | Primary demo user — has 5 related issues |
 
 ---
 
@@ -222,16 +223,16 @@ This creates all users, 10 realistic issues, 11 comments, and sets the counter.
 
 | Issue # | Title (abbreviated) | Priority | Status | Created By | Assigned To |
 |---|---|---|---|---|---|
-| EX-1001 | Thermal runaway on power delivery MOSFETs | Critical | In Progress | Admin | Vishwambhara |
+| EX-1001 | Thermal runaway on power delivery MOSFETs | Critical | In Progress | Admin | Demo User |
 | EX-1002 | Firmware watchdog timer not resetting after UART DMA burst | High | Open | Admin | John Smith |
 | EX-1003 | CAD mismatch: capacitor C18 footprint revision | Medium | Open | Admin | — |
 | EX-1004 | Missing EMC shielding ground stitch vias | Critical | In Progress | Admin | Jane Doe |
-| EX-1005 | Solder bridging on QFN-48 component U12 | High | Closed | Admin | Vishwambhara |
-| EX-1006 | I2C bus timeout after soft reboot | High | In Progress | Vishwambhara | Vishwambhara |
-| EX-1007 | Excessive SPI clock jitter on ADC test bench | Medium | Open | Vishwambhara | — |
-| EX-1008 | GPIO interrupt storm during ESD transient | Critical | Open | Vishwambhara | — |
-| EX-1009 | USB enumeration fails on Windows 11 hosts | High | Closed | Vishwambhara | Vishwambhara |
-| EX-1010 | Update datasheet links in BOM review wiki | Low | Open | Vishwambhara | — |
+| EX-1005 | Solder bridging on QFN-48 component U12 | High | Closed | Admin | Demo User |
+| EX-1006 | I2C bus timeout after soft reboot | High | In Progress | Demo User | Demo User |
+| EX-1007 | Excessive SPI clock jitter on ADC test bench | Medium | Open | Demo User | — |
+| EX-1008 | GPIO interrupt storm during ESD transient | Critical | Open | Demo User | — |
+| EX-1009 | USB enumeration fails on Windows 11 hosts | High | Closed | Demo User | Demo User |
+| EX-1010 | Update datasheet links in BOM review wiki | Low | Open | Demo User | — |
 
 ### Comments (11 total across 5 issues)
 Comments are seeded on issues **EX-1001**, **EX-1004**, **EX-1005**, **EX-1006**, and **EX-1009** with realistic engineering-level discussion.
