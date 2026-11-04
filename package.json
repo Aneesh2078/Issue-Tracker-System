@@ -1,0 +1,22 @@
+{
+  "name": "issue-tracker-system",
+  "version": "1.0.0",
+  "description": "Full-Stack Issue Tracker System - Exelon Circuits Technical Assessment",
+  "scripts": {
+    "install:all": "npm --prefix backend install && npm --prefix frontend install",
+    "seed": "npm --prefix backend run seed",
+    "server": "npm --prefix backend run dev",
+    "client": "npm --prefix frontend run dev"
+  },
+  "keywords": [
+    "issue-tracker",
+    "react",
+    "vite",
+    "express",
+    "mongodb",
+    "jwt",
+    "tailwind"
+  ],
+  "author": "Aneesh2078",
+  "license": "ISC"
+}
