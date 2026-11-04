@@ -207,13 +207,12 @@ This creates all users, 10 realistic issues, 11 comments, and sets the counter.
 
 > All accounts below are pre-seeded in the MongoDB Atlas database.
 
-| Role | Email | Password | Notes |
-|---|---|---|---|
-| **Admin** | `admin@exelon.com` | `AdminPass@123` | Full access — manage users, all issues |
-| **User** | `vishwambhara@exelon.com` | `User@12345` | Primary demo user — has 5 related issues |
-| **User** | `jane.doe@exelon.com` | `UserPass@123` | Assigned EMC shielding issue |
-| **User** | `john.smith@exelon.com` | `UserPass@123` | Assigned firmware watchdog issue |
-| **User** | `priya.kumar@exelon.com` | `UserPass@123` | **Deactivated** — demonstrates admin toggle |
+| Role | Email | Notes |
+|---|---|---|
+| **Admin** | `admin@exelon.com` | Full access — manage users, all issues |
+| **User** | `jane.doe@exelon.com` | Assigned EMC shielding issue |
+| **User** | `john.smith@exelon.com` | Assigned firmware watchdog issue |
+| **User** | `priya.kumar@exelon.com` | **Deactivated** — demonstrates admin toggle |
 
 ---
 
