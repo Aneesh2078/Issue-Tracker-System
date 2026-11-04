@@ -108,18 +108,18 @@ export const IssueDetailsPage = () => {
   const canChangeStatus = isAdmin || isAssignee;
 
   return (
-    <div className="max-w-4xl mx-auto space-y-6">
+    <div className="max-w-4xl mx-auto space-y-4 sm:space-y-6">
       {/* Top back navigation and Actions */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
         <button
           onClick={() => navigate(-1)}
-          className="inline-flex items-center gap-1.5 text-xs font-medium text-slate-500 hover:text-slate-800 transition-colors"
+          className="inline-flex items-center gap-1.5 text-xs font-medium text-slate-500 hover:text-slate-800 transition-colors w-fit"
         >
           <ArrowLeft className="w-3.5 h-3.5" />
           <span>Back to Issues</span>
         </button>
 
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 flex-wrap">
           {canEdit && (
             <Link
               to={`/issues/edit/${issue._id}`}
@@ -153,12 +153,12 @@ export const IssueDetailsPage = () => {
       </div>
 
       {/* Main Issue Card */}
-      <div className="bg-white border border-slate-200 rounded-md p-6 shadow-xs space-y-6">
+      <div className="bg-white border border-slate-200 rounded-md p-4 sm:p-6 shadow-xs space-y-5 sm:space-y-6">
         {/* Issue Identification Header */}
-        <div className="border-b border-slate-200 pb-5">
-          <div className="flex flex-wrap items-center justify-between gap-3 mb-2">
-            <div className="flex items-center gap-2.5">
-              <span className="text-sm font-bold text-blue-600 bg-blue-50 px-2 py-0.5 rounded border border-blue-200">
+        <div className="border-b border-slate-200 pb-4 sm:pb-5">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2.5 sm:gap-3 mb-2">
+            <div className="flex items-center gap-2 flex-wrap">
+              <span className="text-xs sm:text-sm font-bold text-blue-600 bg-blue-50 px-2 py-0.5 rounded border border-blue-200">
                 {issue.issueNumber}
               </span>
               <PriorityBadge priority={issue.priority} />
@@ -186,7 +186,7 @@ export const IssueDetailsPage = () => {
             </div>
           </div>
 
-          <h2 className="text-xl font-bold text-slate-800 tracking-tight mt-3">
+          <h2 className="text-lg sm:text-xl font-bold text-slate-800 tracking-tight mt-3 break-words">
             {issue.title}
           </h2>
         </div>
@@ -196,20 +196,20 @@ export const IssueDetailsPage = () => {
           <h3 className="text-xs font-bold uppercase tracking-wider text-slate-500 mb-2">
             Description
           </h3>
-          <div className="text-xs text-slate-700 leading-relaxed whitespace-pre-line bg-slate-50/60 p-4 rounded-md border border-slate-100">
+          <div className="text-xs text-slate-700 leading-relaxed whitespace-pre-line bg-slate-50/60 p-3.5 sm:p-4 rounded-md border border-slate-100 break-words">
             {issue.description}
           </div>
         </div>
 
         {/* Issue Metadata Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 pt-4 border-t border-slate-200">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3.5 sm:gap-4 pt-4 border-t border-slate-200">
           <div>
             <span className="text-[11px] font-medium text-slate-400 block mb-1">
               Created By
             </span>
             <div className="flex items-center gap-1.5 text-xs font-semibold text-slate-800">
-              <User className="w-3.5 h-3.5 text-slate-400" />
-              <span>{issue.createdBy?.name || 'Unknown'}</span>
+              <User className="w-3.5 h-3.5 text-slate-400 shrink-0" />
+              <span className="truncate">{issue.createdBy?.name || 'Unknown'}</span>
             </div>
           </div>
 
@@ -220,8 +220,8 @@ export const IssueDetailsPage = () => {
             <div className="flex items-center gap-1.5 text-xs font-semibold text-slate-800">
               {issue.assignedTo ? (
                 <>
-                  <CheckCircle className="w-3.5 h-3.5 text-emerald-500" />
-                  <span>{issue.assignedTo.name}</span>
+                  <CheckCircle className="w-3.5 h-3.5 text-emerald-500 shrink-0" />
+                  <span className="truncate">{issue.assignedTo.name}</span>
                 </>
               ) : (
                 <span className="text-slate-400 font-normal italic">Unassigned</span>
@@ -234,7 +234,7 @@ export const IssueDetailsPage = () => {
               Created Date
             </span>
             <div className="flex items-center gap-1.5 text-xs text-slate-600">
-              <Calendar className="w-3.5 h-3.5 text-slate-400" />
+              <Calendar className="w-3.5 h-3.5 text-slate-400 shrink-0" />
               <span>{formatDateTime(issue.createdAt)}</span>
             </div>
           </div>
@@ -244,7 +244,7 @@ export const IssueDetailsPage = () => {
               Last Updated
             </span>
             <div className="flex items-center gap-1.5 text-xs text-slate-600">
-              <Clock className="w-3.5 h-3.5 text-slate-400" />
+              <Clock className="w-3.5 h-3.5 text-slate-400 shrink-0" />
               <span>{formatDateTime(issue.updatedAt)}</span>
             </div>
           </div>

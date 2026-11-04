@@ -67,8 +67,8 @@ export const CommentSection = ({ issueId }) => {
   };
 
   return (
-    <div className="bg-white border border-slate-200 rounded-md p-5 mt-6">
-      <div className="flex items-center gap-2 pb-4 border-b border-slate-200">
+    <div className="bg-white border border-slate-200 rounded-md p-4 sm:p-5 mt-6">
+      <div className="flex items-center gap-2 pb-3.5 sm:pb-4 border-b border-slate-200">
         <MessageSquare className="w-4 h-4 text-blue-600" />
         <h3 className="text-sm font-semibold text-slate-800">
           Activity & Comments ({comments.length})
@@ -76,7 +76,7 @@ export const CommentSection = ({ issueId }) => {
       </div>
 
       {/* Comment List */}
-      <div className="py-4 space-y-4">
+      <div className="py-4 space-y-3.5">
         {loading ? (
           <div className="text-xs text-slate-500 py-4 text-center">Loading comments...</div>
         ) : comments.length === 0 ? (
@@ -91,16 +91,16 @@ export const CommentSection = ({ issueId }) => {
             return (
               <div
                 key={c._id}
-                className="flex items-start gap-3 p-3.5 rounded-md bg-slate-50/70 border border-slate-100"
+                className="flex items-start gap-2.5 sm:gap-3 p-3 sm:p-3.5 rounded-md bg-slate-50/70 border border-slate-100 relative group"
               >
-                <div className="w-7 h-7 rounded-full bg-blue-600 text-white font-medium text-[11px] flex items-center justify-center flex-shrink-0">
+                <div className="w-7 h-7 rounded-full bg-blue-600 text-white font-medium text-[11px] flex items-center justify-center flex-shrink-0 mt-0.5">
                   {getInitials(c.user?.name)}
                 </div>
 
-                <div className="flex-1 min-w-0">
-                  <div className="flex items-center justify-between gap-2">
-                    <div className="flex items-center gap-2">
-                      <span className="text-xs font-semibold text-slate-800">
+                <div className="flex-1 min-w-0 pr-6 sm:pr-0">
+                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-0.5 sm:gap-2">
+                    <div className="flex items-center gap-1.5 flex-wrap">
+                      <span className="text-xs font-semibold text-slate-800 break-words">
                         {c.user?.name || 'Anonymous User'}
                       </span>
                       {c.user?.role === 'admin' && (
@@ -109,12 +109,12 @@ export const CommentSection = ({ issueId }) => {
                         </span>
                       )}
                     </div>
-                    <span className="text-[11px] text-slate-400 whitespace-nowrap">
+                    <span className="text-[10px] sm:text-[11px] text-slate-400">
                       {formatDateTime(c.createdAt)}
                     </span>
                   </div>
 
-                  <p className="text-xs text-slate-700 mt-1.5 whitespace-pre-line leading-relaxed">
+                  <p className="text-xs text-slate-700 mt-1.5 whitespace-pre-line leading-relaxed break-words">
                     {c.text}
                   </p>
                 </div>
@@ -123,7 +123,7 @@ export const CommentSection = ({ issueId }) => {
                   <button
                     onClick={() => handleDeleteComment(c._id)}
                     disabled={deletingId === c._id}
-                    className="text-slate-400 hover:text-red-600 p-1 rounded transition-colors disabled:opacity-50"
+                    className="absolute top-2.5 right-2 sm:relative sm:top-0 sm:right-0 text-slate-400 hover:text-red-600 p-1 rounded transition-colors disabled:opacity-50"
                     title="Delete comment"
                   >
                     <Trash2 className="w-3.5 h-3.5" />
